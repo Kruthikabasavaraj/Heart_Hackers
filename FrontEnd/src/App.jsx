@@ -1,11 +1,14 @@
-import React from 'react'
+// App.js
+import React from 'react';
+import ListenDoctor from './components/ListenDoctor'; // Import ListenDoctor component
 
 function App() {
   return (
-    <h1 className="text-3xl font-bold underline">
-    Hello world!
-  </h1>
-  )
+    <div className="App">
+      {/* Render the ListenDoctor component */}
+      <ListenDoctor />
+    </div>
+  );
 }
 
-export default App
+export default App;
