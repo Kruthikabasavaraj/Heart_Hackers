@@ -1,6 +1,5 @@
 // App.js
-import React from 'react';
-import ListenDoctor from './components/ListenDoctor'; // Import ListenDoctor component
+import ListenDoctor from "./components/ListenDoctor"; // Import ListenDoctor component
 
 function App() {
   return (
