@@ -50,4 +50,10 @@ app.use("/api", limiter);
 app.use("/api/v1/user", userRoutes);
 app.use("/api/v1/doctor", doctorRoutes);
 
+app.use(express.static(path.join(__dirname, "..", "frontend", "/dist")));
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "..", "dist", "frontend", "index.html"));
+});
+
 module.exports = app;

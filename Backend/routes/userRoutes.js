@@ -11,6 +11,7 @@ router.post("/login", authController.login);
 router.use(authController.protect);
 
 router.use(authController.restrictTo("user"));
+router.get("/me", userController.getMe, userController.getUser);
 
 // user routes
 

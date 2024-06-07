@@ -4,6 +4,7 @@ const crypto = require("crypto");
 const User = require("../model/userModel");
 const catchAsync = require("../utils/catchAsync");
 const AppError = require("../utils/appError");
+const { log } = require("console");
 
 const signToken = (id) =>
   jwt.sign({ id }, process.env.JWT_SECRET, {
@@ -53,10 +54,11 @@ exports.login = catchAsync(async (req, res, next) => {
   }
 
   const user = await User.findOne({ email }).select("+password"); // marked as not selectes use "+"
-
+  console.log(user);
   if (!user || !(await user.correctPassword(password, user.password))) {
     return next(new AppError("Incorrect email or password", 401));
   }
+  // res.body = user.role;
 
   createSendToken(user, 200, res);
 });
