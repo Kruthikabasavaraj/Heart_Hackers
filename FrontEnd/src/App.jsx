@@ -5,7 +5,9 @@ import UserDisplay from "./components/UserDisplay";
 import SignUp from "./components/SignUp";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
+
 function App() {
+  console.log("Hello")
   return (
     <div className="App">
       {/* Render the ListenDoctor component */}
